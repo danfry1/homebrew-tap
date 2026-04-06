@@ -5,21 +5,21 @@
 class Waxon < Formula
   desc "Vim-modal Spotify terminal client"
   homepage "https://github.com/danfry1/waxon"
-  version "1.2.1"
+  version "1.2.2"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danfry1/waxon/releases/download/v1.2.1/waxon_1.2.1_darwin_amd64.tar.gz"
-      sha256 "6a589572b844e99de40972a463dbcd02083a6a7353fc7f63673b8917765cbc35"
+      url "https://github.com/danfry1/waxon/releases/download/v1.2.2/waxon_1.2.2_darwin_amd64.tar.gz"
+      sha256 "957e45640fee03d9af1b97921240b7c889d243daa6100da5e43a163be82bf319"
 
       define_method(:install) do
         bin.install "waxon"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danfry1/waxon/releases/download/v1.2.1/waxon_1.2.1_darwin_arm64.tar.gz"
-      sha256 "18fd2e9d6af9b1e69dab1318624a830391edf4a52c5f112636fa82bfec9df1e5"
+      url "https://github.com/danfry1/waxon/releases/download/v1.2.2/waxon_1.2.2_darwin_arm64.tar.gz"
+      sha256 "45997334f2fa5cd5383c30c7faf21241228e15ffb02957a3c325bcbc5dc73827"
 
       define_method(:install) do
         bin.install "waxon"
@@ -29,15 +29,15 @@ class Waxon < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danfry1/waxon/releases/download/v1.2.1/waxon_1.2.1_linux_amd64.tar.gz"
-      sha256 "d20d164e426767059fb8c4d46b9861e33806f5314f87d48915c4a42b46c8384e"
+      url "https://github.com/danfry1/waxon/releases/download/v1.2.2/waxon_1.2.2_linux_amd64.tar.gz"
+      sha256 "88650f86700cb6a7060801c601b21e82aa0b43889c367170ff4d9d8e95970545"
       define_method(:install) do
         bin.install "waxon"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danfry1/waxon/releases/download/v1.2.1/waxon_1.2.1_linux_arm64.tar.gz"
-      sha256 "9cba0b73fbe29ab30235d66c5c0cad144271761932ea1e91c64ede2a640d3949"
+      url "https://github.com/danfry1/waxon/releases/download/v1.2.2/waxon_1.2.2_linux_arm64.tar.gz"
+      sha256 "5bd395333211a802254fb7204c4bdfa68a4ccdf3e4e61a92577d0f25373b107f"
       define_method(:install) do
         bin.install "waxon"
       end
