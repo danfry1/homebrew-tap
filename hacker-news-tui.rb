@@ -4,13 +4,13 @@
 class HackerNewsTui < Formula
   desc "Delightful terminal UI for browsing Hacker News, built with ratatui"
   homepage "https://github.com/danfry1/hacker-news-tui"
-  version "0.1.4"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.1.4/hacker-news-tui-aarch64-apple-darwin.tar.gz"
-      sha256 "76d8faf93f9951e1c36af1a8c2090b26fa5af9b4510ac94f91146a912c2fad64"
+      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.2.0/hacker-news-tui-aarch64-apple-darwin.tar.gz"
+      sha256 "11a8977987a34ba0cc72f1e63ab95c743a85700c57642ae573eb8525a85d1733"
 
       def install
         bin.install "hacker-news-tui"
@@ -20,16 +20,16 @@ class HackerNewsTui < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.1.4/hacker-news-tui-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1985c8aa417c4457c5ecaca16deded2dff67d3507a250ba3a8df31e8131d5ecc"
+      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.2.0/hacker-news-tui-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d9c988b39ce0e4391e39055264cd1e2bd6737e7a38286058e9a15e57942e1f57"
 
       def install
         bin.install "hacker-news-tui"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.1.4/hacker-news-tui-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d11d17d064eea3de975e7a3f5840452c35f66d75b0df9d5d99ae2ff3ac1b12d0"
+      url "https://github.com/danfry1/hacker-news-tui/releases/download/v0.2.0/hacker-news-tui-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1322f987e393479124aa9adb725616ff9c86b93db57e20ff03acc7a16ccdda92"
 
       def install
         bin.install "hacker-news-tui"
