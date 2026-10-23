@@ -3,24 +3,24 @@
 class Marina < Formula
   desc "Developer-process cockpit TUI and CLI for local dev servers"
   homepage "https://github.com/danfry1/marina"
-  version "0.5.0"
+  version "0.6.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/danfry1/marina/releases/download/v0.5.0/marina-aarch64-apple-darwin.tar.gz"
-      sha256 "30c44bf1458d8156585c8531dbe75b93b00dddc3fb52aad772a2289a75531aee"
+      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-aarch64-apple-darwin.tar.gz"
+      sha256 "6104f764ac6f2708579ede66fcdf4f1ceb3fcb2afae6919bfabbb57af1bb4482"
     end
     on_intel do
-      url "https://github.com/danfry1/marina/releases/download/v0.5.0/marina-x86_64-apple-darwin.tar.gz"
-      sha256 "238dbc3497d18fd572c34fb7a2cfa6b665d20c3ab8c980cefb514144d41070d5"
+      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-x86_64-apple-darwin.tar.gz"
+      sha256 "af766683e2caa7a7d1beb86b449f65c09e466072c6bd81ee7fbe686c752f8047"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danfry1/marina/releases/download/v0.5.0/marina-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8d07820861e33d0f9d90a1b982acf34508359b671a360b1b94cb0fd39dc3c13b"
+      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "0d0064d897865e58cdb08dc9223d4216f6a1d2048f1a515fd2a63704c94c3dde"
     end
   end
 
