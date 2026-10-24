@@ -14,6 +14,14 @@ class HackerNewsTui < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/danfry1/homebrew-tap/releases/download/hacker-news-tui-0.2.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687f97d4ca55245384584d62419119b12ea7c8e53864a6f32ab319c50aaf0010"
+    sha256 cellar: :any,                 arm64_linux:   "3e5ace5072178b68ed887402a4c31787b08efba5bbcf4b0a0af9f6d3c87e2836"
+    sha256 cellar: :any,                 x86_64_linux:  "87f955ed8f585a3ae8731769daa0e6f4c8df92f9abec2790882393b9133e07ff"
+  end
+
   depends_on "rust" => :build
 
   def install
