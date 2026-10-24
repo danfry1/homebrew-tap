@@ -26,11 +26,8 @@ jobs:
       - name: Trust this tap
         run: brew trust danfry1/tap
 
-      # A formula and a cask share the name waxon, so style each explicitly.
       - name: Style
-        run: |
-          brew style --formula danfry1/tap/waxon
-          brew style --cask danfry1/tap/waxon
+        run: brew style --formula danfry1/tap/waxon
 
       - name: Audit
         run: brew audit --strict --online --formula danfry1/tap/waxon

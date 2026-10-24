@@ -11,7 +11,9 @@ class Waxon < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+    # Match the release binaries, which are built without cgo on every platform.
+    ENV["CGO_ENABLED"] = "0"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}")
   end
 
   test do
