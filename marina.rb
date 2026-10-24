@@ -6,6 +6,7 @@ class Marina < Formula
   url "https://github.com/danfry1/marina/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "278b0f4667da6034487bfb3b0177073d3ad45a8dbf82ca65e7850bf43db136d5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/danfry1/marina.git", branch: "main"
 
   # Only stable GitHub releases count, never pre-release tags.
