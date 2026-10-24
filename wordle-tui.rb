@@ -16,10 +16,10 @@ class WordleTui < Formula
 
   bottle do
     root_url "https://github.com/danfry1/homebrew-tap/releases/download/wordle-tui-0.1.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fda1cb8a9940e7a8aefb19b0230b57a399db0a3cabbb628b2492973abc14de2"
-    sha256 cellar: :any,                 arm64_linux:   "f29f25e97b3cf2c29c0cef70da4bbb6b3410cd3b2f50e8140827597c116ab1b2"
-    sha256 cellar: :any,                 x86_64_linux:  "8ddd19753916bcf8b862e5b5c67f2e1c1d8b313c6de00943b4421241b7ab472a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26fd7c323debc2d632a544e00bfdce639fa02447e50bc3fa6a002407e4f7e37f"
+    sha256 cellar: :any,                 arm64_linux:   "1d635a773f35812ee4ea818a83aed431a64d1aea9bb159755f460b200951c299"
+    sha256 cellar: :any,                 x86_64_linux:  "1290fb9d0a0d3c3090aa5f12fe694f6246e395d1bef2e2f93887d0a2dfe6f0d6"
   end
 
   depends_on "rust" => :build
