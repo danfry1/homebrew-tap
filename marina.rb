@@ -30,5 +30,12 @@ class Marina < Formula
 
   test do
     assert_match "developer-process cockpit", shell_output("#{bin}/marina help")
+
+    # `marina port` gives a project a stable port and records it.
+    (testpath/"package.json").write '{"name":"demo"}'
+    port = shell_output("#{bin}/marina port").strip
+    assert_match(/\A\d+\z/, port)
+    assert_equal port, shell_output("#{bin}/marina port").strip
+    assert_match ":#{port}", shell_output("#{bin}/marina port --list")
   end
 end

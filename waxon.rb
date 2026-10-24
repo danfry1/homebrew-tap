@@ -31,6 +31,10 @@ class Waxon < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/waxon --version")
+    assert_match version.to_s, shell_output("#{bin}/waxon version")
+    assert_match %r{waxon/config\.json$}, shell_output("#{bin}/waxon config").strip
+    assert_match "dracula", shell_output("#{bin}/waxon themes")
+    # Without a Spotify login, playback commands fail with a pointer to `waxon auth`.
+    assert_match "waxon auth", shell_output("#{bin}/waxon status 2>&1", 1)
   end
 end

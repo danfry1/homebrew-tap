@@ -29,6 +29,26 @@ class WordleTui < Formula
   end
 
   test do
-    assert_match "wordle-tui #{version}", shell_output("#{bin}/wordle-tui --version")
+    assert_match version.to_s, shell_output("#{bin}/wordle-tui --version")
+
+    # Start the TUI in a pseudo-terminal and check it draws the board and quits cleanly.
+    require "pty"
+    require "io/console"
+    ENV["TERM"] = "xterm-256color"
+    output = +""
+    PTY.spawn("#{bin}/wordle-tui") do |r, w, pid|
+      r.winsize = [30, 100]
+      sleep 3
+      w.write "\e"
+      begin
+        r.each_char { |c| output << c }
+      rescue Errno::EIO
+        # Linux raises EIO once the program closes the terminal.
+      end
+      _, status = Process.wait2(pid)
+      assert_equal 0, status.exitstatus
+    end
+    screen = output.gsub(/\e\[[0-9;?]*[ -\/]*[@-~]/, "")
+    assert_match "WORDLE", screen
   end
 end

@@ -29,6 +29,28 @@ class HackerNewsTui < Formula
   end
 
   test do
-    assert_match "hacker-news-tui #{version}", shell_output("#{bin}/hacker-news-tui --version")
+    assert_match version.to_s, shell_output("#{bin}/hacker-news-tui --version")
+
+    # Start the TUI in a pseudo-terminal and check it draws its feed tabs and quits cleanly.
+    require "pty"
+    require "io/console"
+    ENV["TERM"] = "xterm-256color"
+    output = +""
+    PTY.spawn("#{bin}/hacker-news-tui") do |r, w, pid|
+      r.winsize = [30, 100]
+      sleep 3
+      w.write "q"
+      begin
+        r.each_char { |c| output << c }
+      rescue Errno::EIO
+        # Linux raises EIO once the program closes the terminal.
+      end
+      _, status = Process.wait2(pid)
+      assert_equal 0, status.exitstatus
+    end
+    screen = output.gsub(/\e\[[0-9;?]*[ -\/]*[@-~]/, "")
+    assert_match "Hacker News", screen
+    assert_match "Top", screen
+    assert_match "Ask", screen
   end
 end
