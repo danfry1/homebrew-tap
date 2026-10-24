@@ -3,14 +3,6 @@
 # stripped. GoReleaser no longer regenerates this cask; it stays at the last
 # version so existing installs see the migration message.
 cask "waxon" do
-  deprecate! date: "2026-10-24", because: :fails_gatekeeper_check, replacement_formula: "danfry1/tap/waxon"
-
-  postflight_steps do
-    on_macos do
-      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/waxon"]
-    end
-  end
-
   version "1.10.0"
 
   on_macos do
@@ -39,10 +31,16 @@ cask "waxon" do
   homepage "https://github.com/danfry1/waxon"
 
   livecheck do
-    skip "Auto-generated on release."
+    skip "Deprecated in favour of the danfry1/tap/waxon formula"
   end
+
+  deprecate! date: "2026-10-24", because: :fails_gatekeeper_check, replacement_formula: "danfry1/tap/waxon"
 
   binary "waxon"
 
-  # No zap stanza required
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/waxon"]
+    end
+  end
 end
