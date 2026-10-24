@@ -3,8 +3,8 @@
 class Waxon < Formula
   desc "Vim-modal Spotify terminal client"
   homepage "https://github.com/danfry1/waxon"
-  url "https://github.com/danfry1/waxon/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "8ee5efbd88aca8545e9013280e8b8e9337dbb3f412e790cae8bba8fb81cf5080"
+  url "https://github.com/danfry1/waxon/archive/refs/tags/v1.11.0.tar.gz"
+  sha256 "75ac5dcf0783e274d69fe679e9d090d6e417d92231a7217fd28aa4ac3b853d47"
   license "GPL-3.0-only"
   head "https://github.com/danfry1/waxon.git", branch: "main"
 
@@ -12,14 +12,6 @@ class Waxon < Formula
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/danfry1/homebrew-tap/releases/download/waxon-1.10.0"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f99a61bdfe7709446daa16b73334a424bf9348c5963c3e3fcdbe1e21ef8f0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f491949ebe8b4a4f73b74bf705b41d8a51808931d87ad86e9e9bacaa92c3e985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361323763f4ba6677a8790620b3f21c404ee3b08629680840c16e7b10eeb58fe"
   end
 
   depends_on "go" => :build
