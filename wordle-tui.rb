@@ -14,6 +14,14 @@ class WordleTui < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/danfry1/homebrew-tap/releases/download/wordle-tui-0.1.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fda1cb8a9940e7a8aefb19b0230b57a399db0a3cabbb628b2492973abc14de2"
+    sha256 cellar: :any,                 arm64_linux:   "f29f25e97b3cf2c29c0cef70da4bbb6b3410cd3b2f50e8140827597c116ab1b2"
+    sha256 cellar: :any,                 x86_64_linux:  "8ddd19753916bcf8b862e5b5c67f2e1c1d8b313c6de00943b4421241b7ab472a"
+  end
+
   depends_on "rust" => :build
 
   def install
