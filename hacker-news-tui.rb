@@ -16,10 +16,10 @@ class HackerNewsTui < Formula
 
   bottle do
     root_url "https://github.com/danfry1/homebrew-tap/releases/download/hacker-news-tui-0.2.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "687f97d4ca55245384584d62419119b12ea7c8e53864a6f32ab319c50aaf0010"
-    sha256 cellar: :any,                 arm64_linux:   "3e5ace5072178b68ed887402a4c31787b08efba5bbcf4b0a0af9f6d3c87e2836"
-    sha256 cellar: :any,                 x86_64_linux:  "87f955ed8f585a3ae8731769daa0e6f4c8df92f9abec2790882393b9133e07ff"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6836158ca5d770c277028d1a3a0a38f7747323acadae457af406b3221eca27bd"
+    sha256 cellar: :any,                 arm64_linux:   "f8bc02b6ef2a683a9b9f33a45c4b94f51f6bde5cb88f26db5ef40d5cc9747ee6"
+    sha256 cellar: :any,                 x86_64_linux:  "f9d74cbde2ee4b5d1ae43f445b20b7360bd8116f7d9e89dbcdc60cf44a05259d"
   end
 
   depends_on "rust" => :build
