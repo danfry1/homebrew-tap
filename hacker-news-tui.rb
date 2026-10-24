@@ -48,7 +48,7 @@ class HackerNewsTui < Formula
       _, status = Process.wait2(pid)
       assert_equal 0, status.exitstatus
     end
-    screen = output.gsub(/\e\[[0-9;?]*[ -\/]*[@-~]/, "")
+    screen = output.gsub(%r{\e\[[0-9;?]*[ -/]*[@-~]}, "")
     assert_match "Hacker News", screen
     assert_match "Top", screen
     assert_match "Ask", screen

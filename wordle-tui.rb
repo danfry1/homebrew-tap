@@ -48,7 +48,7 @@ class WordleTui < Formula
       _, status = Process.wait2(pid)
       assert_equal 0, status.exitstatus
     end
-    screen = output.gsub(/\e\[[0-9;?]*[ -\/]*[@-~]/, "")
+    screen = output.gsub(%r{\e\[[0-9;?]*[ -/]*[@-~]}, "")
     assert_match "WORDLE", screen
   end
 end
