@@ -6,25 +6,25 @@ cask "waxon" do
     end
   end
 
-  version "1.8.1"
+  version "1.10.0"
 
   on_macos do
     on_arm do
-      sha256 "a3a901421b7d8f8b93127e27895f30ecaede76669a07c2e08607eb6bebada725"
+      sha256 "7636474d4cb35df15d564a73938ca8dc110a575eb0f89582128717245f24dc75"
       url "https://github.com/danfry1/waxon/releases/download/v#{version}/waxon_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "5401e59e82bea3796be8fe7890d9ca2dc71942c90ae455f4f3ed354db98a5ea0"
+      sha256 "2c1271ebc68fc7a80f2838a7dac0474f1007c9f16328bf9105536ac2af8bda88"
       url "https://github.com/danfry1/waxon/releases/download/v#{version}/waxon_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "0d113e2ad185421f84259c6a424ff41e9ac2b17803112c126cbf2d68737e984e"
+      sha256 "01b493816e66511106057fe79c7e6ba86506bcf26335fbeb756c93d40addae24"
       url "https://github.com/danfry1/waxon/releases/download/v#{version}/waxon_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "8ad2c72cb1f5f9fbf86fc876a24fd653ac681003e7d0d66e0ade4c962456f438"
+      sha256 "9aa12e7d73899ef64f41d104615168d7c264560017b8bd7023ea0914cabf5ede"
       url "https://github.com/danfry1/waxon/releases/download/v#{version}/waxon_#{version}_linux_amd64.tar.gz"
     end
   end
