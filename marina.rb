@@ -31,11 +31,15 @@ class Marina < Formula
   test do
     assert_match "developer-process cockpit", shell_output("#{bin}/marina help")
 
-    # `marina port` gives a project a stable port and records it.
-    (testpath/"package.json").write '{"name":"demo"}'
-    port = shell_output("#{bin}/marina port").strip
-    assert_match(/\A\d+\z/, port)
-    assert_equal port, shell_output("#{bin}/marina port").strip
-    assert_match ":#{port}", shell_output("#{bin}/marina port --list")
+    # `marina port` gives a project a stable port and records it. The project
+    # sits below HOME: marina ignores a manifest in HOME itself by design.
+    (testpath/"demo").mkpath
+    (testpath/"demo/package.json").write '{"name":"demo"}'
+    cd testpath/"demo" do
+      port = shell_output("#{bin}/marina port").strip
+      assert_match(/\A\d+\z/, port)
+      assert_equal port, shell_output("#{bin}/marina port").strip
+      assert_match ":#{port}", shell_output("#{bin}/marina port --list")
+    end
   end
 end
