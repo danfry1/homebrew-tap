@@ -3,29 +3,21 @@
 class Marina < Formula
   desc "Developer-process cockpit TUI and CLI for local dev servers"
   homepage "https://github.com/danfry1/marina"
-  version "0.6.0"
+  url "https://github.com/danfry1/marina/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "278b0f4667da6034487bfb3b0177073d3ad45a8dbf82ca65e7850bf43db136d5"
   license "Apache-2.0"
+  head "https://github.com/danfry1/marina.git", branch: "main"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-aarch64-apple-darwin.tar.gz"
-      sha256 "6104f764ac6f2708579ede66fcdf4f1ceb3fcb2afae6919bfabbb57af1bb4482"
-    end
-    on_intel do
-      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-x86_64-apple-darwin.tar.gz"
-      sha256 "af766683e2caa7a7d1beb86b449f65c09e466072c6bd81ee7fbe686c752f8047"
-    end
+  # Only stable GitHub releases count, never pre-release tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
-  on_linux do
-    on_intel do
-      url "https://github.com/danfry1/marina/releases/download/v0.6.0/marina-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0d0064d897865e58cdb08dc9223d4216f6a1d2048f1a515fd2a63704c94c3dde"
-    end
-  end
+  depends_on "rust" => :build
 
   def install
-    bin.install "marina"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
