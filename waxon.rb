@@ -8,6 +8,12 @@ class Waxon < Formula
   license "GPL-3.0-only"
   head "https://github.com/danfry1/waxon.git", branch: "main"
 
+  # Only stable GitHub releases count, never pre-release tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "go" => :build
 
   def install
