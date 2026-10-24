@@ -1,0 +1,37 @@
+name: homebrew-core readiness
+
+# Report-only: runs homebrew-core's new-formula audit on every formula here and
+# writes the findings to the job summary, to show what would block a
+# homebrew-core submission (usually notability). Run it by hand.
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  audit:
+    runs-on: macos-15
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Audit as new homebrew-core formulae
+        run: |
+          set -uo pipefail
+          {
+            echo "## homebrew-core readiness"
+            for f in $(brew tap-info --json danfry1/tap | jq -r '.[0].formula_names[]'); do
+              echo
+              echo "### ${f}"
+              echo '```'
+              if brew audit --new --strict --online --formula "$f" 2>&1; then
+                echo "no findings"
+              fi
+              echo '```'
+            done
+          } | tee -a "$GITHUB_STEP_SUMMARY"
