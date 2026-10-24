@@ -17,10 +17,12 @@ jobs:
     strategy:
       fail-fast: false
       # Bottles built on the oldest supported macOS (15) are used on newer
-      # releases, so these four runners cover Apple Silicon and Intel Macs and
-      # x86_64 and ARM Linux.
+      # releases, so these runners cover Apple Silicon Macs and x86_64 and ARM
+      # Linux. There is no Intel macOS runner: homebrew-core no longer ships
+      # Intel bottles for rust or go, so test-bot skips those formulae there
+      # and Intel Macs build from source.
       matrix:
-        os: [ macos-15, macos-15-intel ]
+        os: [ macos-15 ]
         include:
           - os: ubuntu-latest
             container:
