@@ -16,10 +16,10 @@ class Waxon < Formula
 
   bottle do
     root_url "https://github.com/danfry1/homebrew-tap/releases/download/waxon-1.10.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35da9b4f53181459021047c1b157a920a29d16f04cb572bfa048c75afd13a56a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84523795b150ac9012dcea40d64eb7e4d06e030cf9f4a8f0a570ab63aad5281a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7c96ef1db58ebde3244a60096bec7df62fc1cb61fee6dfdf2ac7ee71e855c53"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52f99a61bdfe7709446daa16b73334a424bf9348c5963c3e3fcdbe1e21ef8f0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f491949ebe8b4a4f73b74bf705b41d8a51808931d87ad86e9e9bacaa92c3e985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "361323763f4ba6677a8790620b3f21c404ee3b08629680840c16e7b10eeb58fe"
   end
 
   depends_on "go" => :build
