@@ -14,12 +14,6 @@ class Marina < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/danfry1/homebrew-tap/releases/download/marina-0.7.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f172c75a6b154c44563583bf4d7a609a8b62d328a3a072c099316c321e98b07"
-    sha256 cellar: :any,                 arm64_linux:   "68007a6531f672b38cb10120842e4ccee2ed21823dd5a93b6e8ea159d3a945ea"
-    sha256 cellar: :any,                 x86_64_linux:  "d944e2d8f8c350e7581a7203f97e1b0e47f8a2ccb729a56ef8cdbc199557a77d"
-  end
 
   depends_on "rust" => :build
 
@@ -28,7 +22,7 @@ class Marina < Formula
   end
 
   test do
-    assert_match "one inbox for your coding agents", shell_output("#{bin}/marina help")
+    assert_match "deliberately wrong (CI check test)", shell_output("#{bin}/marina help")
 
     # `marina port` gives a project a stable port and records it. The project
     # sits below HOME: marina ignores a manifest in HOME itself by design.
