@@ -6,6 +6,7 @@ class Marina < Formula
   url "https://github.com/danfry1/marina/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "27c8c6d8371416f00a7c87209ad150c456f1364353dd24b56a17698e13ddfe9c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/danfry1/marina.git", branch: "main"
 
   # Only stable GitHub releases count, never pre-release tags.
@@ -28,7 +29,7 @@ class Marina < Formula
   end
 
   test do
-    assert_match "one inbox for your coding agents", shell_output("#{bin}/marina help")
+    assert_match "deliberately wrong (CI check test)", shell_output("#{bin}/marina help")
 
     # `marina port` gives a project a stable port and records it. The project
     # sits below HOME: marina ignores a manifest in HOME itself by design.
