@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Marina < Formula
-  desc "Developer-process cockpit TUI and CLI for local dev servers"
+  desc "Inbox for coding-agent sessions and the dev servers they start"
   homepage "https://github.com/danfry1/marina"
   url "https://github.com/danfry1/marina/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "27c8c6d8371416f00a7c87209ad150c456f1364353dd24b56a17698e13ddfe9c"
@@ -21,7 +21,7 @@ class Marina < Formula
   end
 
   test do
-    assert_match "developer-process cockpit", shell_output("#{bin}/marina help")
+    assert_match "one inbox for your coding agents", shell_output("#{bin}/marina help")
 
     # `marina port` gives a project a stable port and records it. The project
     # sits below HOME: marina ignores a manifest in HOME itself by design.
