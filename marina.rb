@@ -28,7 +28,7 @@ class Marina < Formula
   end
 
   test do
-    assert_match "one inbox for your coding agents", shell_output("#{bin}/marina help")
+    assert_match "deliberately wrong (CI check test)", shell_output("#{bin}/marina help")
 
     # `marina port` gives a project a stable port and records it. The project
     # sits below HOME: marina ignores a manifest in HOME itself by design.
