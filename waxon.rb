@@ -14,6 +14,13 @@ class Waxon < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/danfry1/homebrew-tap/releases/download/waxon-1.14.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c9b01525ec90cc3da216ca57243502e29bd1bfbb62154cf7943494bef5021b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bc35f555f027d992b3abaa3a1a85b7d56b3e15d8dd7986b0c83c8927a231ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10ab81df91fbfba930de0ee6ac52f6dcef7a1640d74d91db6da4315a3bfc4b9"
+  end
+
   depends_on "go" => :build
 
   def install
