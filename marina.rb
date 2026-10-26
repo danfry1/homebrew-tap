@@ -3,8 +3,8 @@
 class Marina < Formula
   desc "Inbox for coding-agent sessions and the dev servers they start"
   homepage "https://github.com/danfry1/marina"
-  url "https://github.com/danfry1/marina/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "27c8c6d8371416f00a7c87209ad150c456f1364353dd24b56a17698e13ddfe9c"
+  url "https://github.com/danfry1/marina/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "7254ef49813b7cf6380077c806c195c0914f39728b2d500949d5de1c7fe748bb"
   license "Apache-2.0"
   head "https://github.com/danfry1/marina.git", branch: "main"
 
@@ -12,13 +12,6 @@ class Marina < Formula
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/danfry1/homebrew-tap/releases/download/marina-0.7.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f172c75a6b154c44563583bf4d7a609a8b62d328a3a072c099316c321e98b07"
-    sha256 cellar: :any,                 arm64_linux:   "68007a6531f672b38cb10120842e4ccee2ed21823dd5a93b6e8ea159d3a945ea"
-    sha256 cellar: :any,                 x86_64_linux:  "d944e2d8f8c350e7581a7203f97e1b0e47f8a2ccb729a56ef8cdbc199557a77d"
   end
 
   depends_on "rust" => :build
