@@ -3,8 +3,8 @@
 class HackerNewsTui < Formula
   desc "Delightful terminal UI for browsing Hacker News, built with ratatui"
   homepage "https://github.com/danfry1/hacker-news-tui"
-  url "https://github.com/danfry1/hacker-news-tui/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "eec1815c89d02462b125e0d7b9d0bbc6dbd92d59f6ed95a0b1c1de914ed4eeaf"
+  url "https://github.com/danfry1/hacker-news-tui/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "ab7b991debb510aa2b9c405d83e42063587e2c5fc21a371143468629d408350c"
   license "MIT"
   head "https://github.com/danfry1/hacker-news-tui.git", branch: "main"
 
@@ -12,14 +12,6 @@ class HackerNewsTui < Formula
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://github.com/danfry1/homebrew-tap/releases/download/hacker-news-tui-0.2.0"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6836158ca5d770c277028d1a3a0a38f7747323acadae457af406b3221eca27bd"
-    sha256 cellar: :any,                 arm64_linux:   "f8bc02b6ef2a683a9b9f33a45c4b94f51f6bde5cb88f26db5ef40d5cc9747ee6"
-    sha256 cellar: :any,                 x86_64_linux:  "f9d74cbde2ee4b5d1ae43f445b20b7360bd8116f7d9e89dbcdc60cf44a05259d"
   end
 
   depends_on "rust" => :build
