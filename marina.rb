@@ -14,6 +14,13 @@ class Marina < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/danfry1/homebrew-tap/releases/download/marina-0.10.0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ecca2fb4448b922d19768f924ca5f56fd51b3a7531dbea128338ecfae716d31"
+    sha256 cellar: :any,                 arm64_linux:   "ece082b11179ae432748963f6886ee37453a262562e6807640d2091448c28dee"
+    sha256 cellar: :any,                 x86_64_linux:  "d132c34c97a90f3103ecee021b03356ff929f4316a490dff9e2fcdc10fba4a09"
+  end
+
   depends_on "rust" => :build
 
   def install
